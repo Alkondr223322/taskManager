@@ -1,7 +1,5 @@
 let storage = localStorage;
-let container = document.createElement('div');
-container.id = 'container';
-document.body.appendChild(container);
+let container = document.querySelector('#container')
 let list = document.createElement('ul');
 container.appendChild(list);
 let txt = document.createElement('input');
@@ -36,6 +34,5 @@ function createTask(){
 	if(task.length==0) return; 
 	txt.value = '';
 	storage.setItem('tasks', storage.getItem('tasks')+ `${task} `);
-	// console.log(storage.getItem('tasks'));
 	updateList(storage.getItem('tasks'));
 }
